@@ -1,8 +1,9 @@
 spring:
     datasource:
-        url: jdbc:mysql://192.168.21.225:3306/spring_social?useSSL=false
-        username: testuser
-        password: 19811981
+      url: jdbc:mysql://192.168.254.131:3306/employees?useSSL=true&serverTimezone=UTC
+        #url: jdbc:mysql://140.143.45.252:3306/spring_social?useSSL=false
+      username: testuser
+      password: 19811981
 
     jpa:
         show-sql: true
@@ -54,20 +55,19 @@ app:
     # redirectUri mentioned by the client in the /oauth2/authorize request.
     # We're not using cookies because they won't work well in mobile clients.
     authorizedRedirectUris:
-      - http://192.168.21.225:3000/oauth2/redirect
+      - http://192.168.254.132:3000/oauth2/redirect
       - myandroidapp://oauth2/redirect
       - myiosapp://oauth2/redirect
 logging:
   level:
     org:
       springframework:
-        web: DEBUG
-        sesecurity: DEBUG
+        web: trace
+        security: trace
         http: DEBUG
     com:
       example:
         springsocial: DEBUG
-
 
 management:
   endpoints:
@@ -76,4 +76,4 @@ management:
         include: "*"
 
 server:
-  port: 8080
+  port: 80
