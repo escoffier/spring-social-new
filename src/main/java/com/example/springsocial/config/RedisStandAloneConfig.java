@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import java.time.Duration;
 
 @Configuration
-//@Profile("redis-standalone")
+@Profile("redis-standalone")
 public class RedisStandAloneConfig extends RedisConfig<String, Object>{
     @Bean
     public JedisConnectionFactory redisStandAloneConnectionFactory() {
